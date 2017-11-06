@@ -1,0 +1,64 @@
+ec2 system manager
+
+cron job scheduling
+daily backup
+Daily jobs
+  team
+
+
+client on machine always running 
+
+comds on the condole itself
+
+using client, patches, batch process
+
+Features
+
+1. Run Command
+2. Inventory
+3. State Management
+4. Automation
+5. Patch management
+6. Maintainance windows
+7. Paramter Store
+8. Configuration compliance
+9. Systems Manager Documents
+
+Getting Started
+
+
+
+
+Install ssM agent into your instances
+
+Assessing system maanger
+
+------------------------------------
+
+1. Creted a new  Vm
+2. Installed ssm agent
+3. created a iam-role for ec2 instances to access system manager as a service
+4. attached the iam role to the machine that we created
+5. Updated trust relation -- added principle argument for ssm in the role I created in step 4
+6. Do the below commands on amazon systems manager as startup script and the 2nd on RUN a command in systems manager.
+
+
+6.1  AWS EC2 SSM Agent Installation – Bootstrap Script
+AWS SSM Install Bootstrap Script
+
+
+#!/bin/bash
+cd /tmp
+sudo yum install -y https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/amazon-ssm-agent.rpm
+
+
+ 
+6.2  Apache Install Commands for EC2 SSM RunCommand
+AWS SSM RunCommand for Apache Install
+
+
+yum install httpd -y
+echo "This is my apache web server" > /var/www/html/index.html
+service httpd start
+
+ 

@@ -1,0 +1,18 @@
+Logs and Logrotate
+
+Logs: - /var/logs
+(Simple dump either by system or by application)
+
+
+Logrotate: - /etc/logrotate
+(Simple file inside this folder containing the following content)
+
+/var/log/folder/*.log {
+	weekly
+	missingok
+	rotate 52
+	compress
+	delaycompress
+	notifyenpty
+	su root root
+}

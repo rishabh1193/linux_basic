@@ -1,0 +1,19 @@
+This is a script
+
+
+#!/bin/bash
+YEAR='date +%Y'
+MONTH='date +%m'
+DAY='date +%d'
+HOUR='date +%H'
+mkdir -p $YEAR/$MONTH/$DAY/$HOUR
+mysqldump -uroot -ppass0987 codingfreaks > $YEAR/$MONTH/$DAY/$HOUR
+
+----------------------------------------------
+
+This is cronjob file
+
+5 * * * * root /home/script.sh
+
+----------------------------------------------
+
